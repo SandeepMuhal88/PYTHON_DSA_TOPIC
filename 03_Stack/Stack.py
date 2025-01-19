@@ -27,7 +27,7 @@ def is_empty():
 def pop():
     if not is_empty():
         stack.pop()
-        # IT is delete Value Always Last valie
+        # IT is delete Value Always Last value
     else:
         print("Stack is empty:)))")
     
