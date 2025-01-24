@@ -10,14 +10,15 @@ class Array:
                 print("Invalid index")
                 return
             new_array = []
-            for i in range(len(self.array) + 1):
-                if i < index:
-                    new_array += [self.array[i]]
-                elif i == index:
-                    new_array += [value]
-                else:
-                    new_array += [self.array[i - 1]]
-            self.array = new_array
+            # for i in range(len(self.array) + 1):
+            #     if i < index:
+            #         new_array += [self.array[i]]
+            #     elif i == index:
+            #         new_array += [value]
+            #     else:
+            #         new_array += [self.array[i - 1]]
+            # self.array = new_array
+            self.array = self.array[:index] + [value] + self.array[index:]
 
     def delete_element(self, index):
 
@@ -25,10 +26,11 @@ class Array:
             print("Invalid index")
             return
         new_array = []
-        for i in range(len(self.array)):
-            if i != index:
-                new_array += [self.array[i]]
-        self.array = new_array
+        # for i in range(len(self.array)):
+        #     if i != index:
+        #         new_array += [self.array[i]]
+        # self.array = new_array
+        self.array = self.array[:index] + self.array[index + 1:]
 
     def display(self):
 
@@ -51,9 +53,8 @@ arr.display()
 arr.insert_element(60, 5)
 print("Array after insertion: ", end="")
 arr.display()
-
 arr.size()
-
-# arr.delete_element(2)
+arr.delete_element(2)
+arr.display()
 # print("Array after deletion: ", end="")
 # arr.display()
